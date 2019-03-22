@@ -1,9 +1,13 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import fetch from 'isomorphic-unfetch';
+import App from '../src/components/App';
 
-const Title = styled.h1`
-	color: red;
-	font-size: 50px;
-`;
+const Index = (props: { data: any[] }) => <App data={props.data.results} />;
 
-export default () => <Title>My page</Title>;
+Index.getInitialProps = async function() {
+	const res = await fetch('https://swapi.co/api/people');
+	const data = await res.json();
+	return { data };
+};
+
+export default Index;
