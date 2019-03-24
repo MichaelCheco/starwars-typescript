@@ -1,6 +1,6 @@
 import React, { createContext } from 'react';
 import CharactersView from './CharactersView';
-type Props = {
+export type Props = {
 	objArr: {
 		birth_year: string;
 		created: string;

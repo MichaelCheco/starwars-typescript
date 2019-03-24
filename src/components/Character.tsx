@@ -1,4 +1,6 @@
 import React from 'react';
+import { Heading } from '../elements';
+import { Header } from '../layouts';
 
 export type CharacterProps = {
 	character: {
@@ -11,8 +13,12 @@ export type CharacterProps = {
 	};
 };
 export const Character: React.FC<CharacterProps> = ({ character }) => {
-	console.log({ character });
-	return <div>{character.birth_year}</div>;
+	return (
+		<>
+			<Header />
+			<Heading>{character.name}</Heading>
+		</>
+	);
 };
 
 export default Character;

@@ -1,7 +1,9 @@
 import React from 'react';
 import { StarWarsContext } from './App';
+import { Props } from './App';
 import Character from './Character';
-const CharactersView = () => {
+
+export const CharactersView: React.FC = () => {
 	const Characters = React.useContext(StarWarsContext);
 	return (
 		<div>
@@ -11,5 +13,4 @@ const CharactersView = () => {
 		</div>
 	);
 };
-
 export default CharactersView;
